@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!-- Le dice al navegador que este archivo usa HTML5 -->
+
+<html lang="en">
+<head>
+  <!-- Aquí va toda la configuración interna de la página -->
+
+  <meta charset="UTF-8">
+  <!-- Permite que se vean bien acentos, símbolos y caracteres especiales -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Hace que la página se adapte a diferentes tamaños de pantalla (como celular) -->
+
+  <title>WikiLeaks — We Open Governments</title>
+  <!-- Nombre que aparece en la pestaña del navegador -->
+
+  <style>
+    /* Reset básico: elimina márgenes y espacios por defecto del navegador */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Estilo general del cuerpo de la página */
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #f5f5f0;
+      color: #222;
+    }
+
+    /* Estilo general de los enlaces */
+    a {
+      text-decoration: none;
+      color: #8b0000;
+    }
+
+    /* HEADER: barra superior con logo y texto */
+    #header {
+      background: #1a1a1a;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Tamaño del logo */
+    #header img {
+      height: 50px;
+    }
+
+    /* Estilo del eslogan */
+    #header span {
+      color: #ccc;
+      font-style: italic;
+    }
+
+    /* NAV: menú de navegación */
+    #nav {
+      background: #2c2c2c;
+    }
+
+    /* Lista del menú en forma horizontal */
+    #nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    /* Estilo de cada opción del menú */
+    #nav li a {
+      color: #ddd;
+      padding: 10px 16px;
+      display: block;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    /* Efecto al pasar el mouse sobre el menú */
+    #nav li a:hover {
+      background: #8b0000;
+      color: white;
+    }
+
+    /* BANNER: mensaje informativo */
+    #banner {
+      background: #1a1a1a;
+      color: #ccc;
+      text-align: center;
+      padding: 10px;
+      font-size: 13px;
+    }
+
+    /* WRAPPER: contenedor principal que organiza contenido y sidebar */
+    #wrapper {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    /* Área principal donde van las noticias */
+    #main-content {
+      flex: 1;
+    }
+
+    /* GRID: organiza las noticias en forma de columnas */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      /* 3 columnas del mismo tamaño */
+      gap: 20px;
+    }
+
+    /* TARJETAS: cada noticia individual */
+    .card {
+      background: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    /* Imagen de cada noticia */
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      /* Hace que la imagen se ajuste sin deformarse */
+    }
+
+    /* Título de la noticia */
+    .card h3 {
+      margin: 10px 0;
+    }
+
+    /* Fecha de la noticia */
+    .date {
+      font-size: 12px;
+      color: gray;
+    }
+
+    /* SIDEBAR: columna lateral derecha */
+    #sidebar {
+      width: 280px;
+    }
+
+    /* Caja de contenido en el sidebar */
+    .widget {
+      background: white;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+    }
+
+    /* Título de cada sección del sidebar */
+    .widget-title {
+      background: #2c2c2c;
+      color: white;
+      padding: 8px;
+      font-size: 12px;
+    }
+
+    /* Contenido dentro del widget */
+    .widget-body {
+      padding: 10px;
+      font-size: 13px;
+    }
+
+    /* FOOTER: parte inferior de la página */
+    #footer {
+      background: #1a1a1a;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+      font-size: 12px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER: contiene logo y frase principal -->
+<div id="header">
+  <!-- Logo de WikiLeaks -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Wikileaks_logo.svg/500px-Wikileaks_logo.svg.png">
+
+  <!-- Eslogan del sitio -->
+  <span>We open governments.</span>
+</div>
+
+<!-- NAV: menú de navegación principal -->
+<nav id="nav">
+  <!-- Lista de opciones -->
+  <ul>
+    <li><a href="#">Leaks</a></li>
+    <li><a href="#">News</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Partners</a></li>
+  </ul>
+</nav>
+
+<!-- BANNER: mensaje destacado -->
+<div id="banner">
+  <!-- Texto informativo -->
+  Secure submission available via encrypted system.
+</div>
+
+<!-- CONTENIDO PRINCIPAL -->
+<div id="wrapper">
+
+  <!-- SECCIÓN DE NOTICIAS -->
+  <div id="main-content">
+
+    <!-- GRID que organiza todas las noticias -->
+    <div class="news-grid">
+
+      <!-- NOTICIA PRINCIPAL (más grande) -->
+      <div class="card" style="grid-column: span 2;">
+        <!-- Imagen destacada -->
+        <img src="https://wikileaks.org/IMG/arton717.png">
+
+        <!-- Título -->
+        <h3>The Intolerance Network</h3>
+
+        <!-- Descripción -->
+        <p>
+            Today, 5th August 2021, WikiLeaks publishes "The Intolerance Network"
+            over 17,000 documents from internationally active right wing campaigning
+            organisations HateOir and CitizenGO.
+        </p>
+
+        <!-- Fecha -->
+        <div class="date">05 August 2021</div>
+      </div>
+
+      <!-- NOTICIAS SECUNDARIAS -->
+      <!-- Cada bloque representa una noticia independiente -->
+
+      <div class="card">
+        <img src="https://wikileaks.org/IMG/arton716.jpg">
+        <h3>Fishrot</h3>
+        <p>Today, November 12, WikiLeaks publishes over 30000 documents from SAMHERJI</p>
+        <div class="date">12 November 2019</div>
+      </div>
+
+      <div class="card">
+        <img src="https://wikileaks.org/IMG/arton715.png">
+        <h3>OPCW Douma</h3>
+        <p>
+            Today, October 23, WikiLeaks publishes a statement made by a panel that
+            listened to testimony and reviewed evidence from a whistleblower from the OPCW (update)
+        </p>
+        <div class="date">23 October 2019</div>
+      </div>
+
+      <div class="card">
+        <img src="https://wikileaks.org/IMG/rubon33.png">
+        <h3>Pope's Orders</h3>
+        <p>
+            Today, January 30th WikiLeaks publishes a set of documents from the Catholic Church,
+            shedding light on the power struggle within highest offices
+        </p>
+        <div class="date">30 January 2019</div>
+      </div>
+
+      <div class="card">
+        <img src="https://wikileaks.org/IMG/arton706.jpg">
+        <h3>US Embassy Shopping List</h3>
+        <p>
+            Today, 21 December 2018, WikiLeaks publishes a searchable database of more
+            than 16,000 procurement requests posted by United States embassies around the world
+        </p>
+        <div class="date">21 December 2018</div>
+      </div>
+
+      <div class="card">
+        <img src="https://wikileaks.org/IMG/arton704.png">
+        <h3>Amazon Atlas</h3>
+        <p>
+            Today, 11 Oct 2018, WikiLeaks publishes a highly confidential internal document
+            from the cloud computing provider Amazon
+        </p>
+        <div class="date">11 October 2018</div>
+      </div>
+
+      <div class="card">
+        <img src="https://wikileaks.org/IMG/arton703.png">
+        <h3>Dealmakers: AI</h3>
+        <p>
+            Today, 28 September 2018, WikiLeaks releases a secret document from the ICC
+            pertaining a dispute over commission payment in relation to $3.6B arms deal
+        </p>
+        <div class="date">28 September 2018</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR: información extra a la derecha -->
+  <aside id="sidebar">
+
+    <!-- Sección informativa -->
+    <div class="widget">
+      <div class="widget-title">About WikiLeaks</div>
+      <div class="widget-body">
+        WikiLeaks is an international organization publishing leaked documents.
+      </div>
+    </div>
+
+    <!-- Sección de acciones (donar/enviar) -->
+    <div class="widget">
+      <div class="widget-title">Support</div>
+      <div class="widget-body">
+        <a href="#">Donate</a>
+      </div>
+      <div class="widget-body">
+        <a href="#">Submit</a>
+      </div>
+    </div>
+
+  </aside>
+
+</div>
+
+<!-- FOOTER: pie de página -->
+<div id="footer">
+  &copy; 2024 WikiLeaks | Privacy | Legal | Contact
+</div>
+
+</body>
+</html>
