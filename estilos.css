@@ -10,4 +10,8 @@ div{
 
 #contenedor{
     border: 10px yellow solid;
+    display: grid;
+grid-template-columns: 2fr 2fr;
+grid-template-rows: 2fr 2fr;
+
 }

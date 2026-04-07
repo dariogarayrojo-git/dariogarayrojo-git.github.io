@@ -8,7 +8,9 @@
    <div id="contenedor">
      <div class="elemento"> Sección 1</div>
      <div class="elemento"> Sección 2</div>
-      
+     <div class="elemento"> Sección 3</div>
+     <div class="elemento"> Sección 4</div>
+
    </div> 
   
   <style >
@@ -23,7 +25,32 @@
 
   
 <script >
-      
+/*  let t=1986;
+  const c=12;
+  console.log(t);
+  let p={"titulo":"Llano en llamas","autor":"Juan Rulfo"};
+  console.log(p.autor);
+
+  let d=document.createElement("p");
+  d.textContent="hola";
+
+  document.getElementById("contenedor").appendChild(d);
+
+  document.getElementById("contenedor").style.backgroundColor = "brown";
+*/
+  async function obtenerJSON(){
+    const respuesta=await fetch('http://openlibrary.org/subjects/love.json?published_in=1500-1600');
+    const datos = await respuesta.json();
+
+    let d=document.createElement("p");
+    d.textContent=datos.works[0].title;
+    document.getElementById("contenedor").appendChild(d);
+
+    console.log(datos);
+  }
+
+  obtenerJSON();
+  
 </script>
 
 
