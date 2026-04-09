@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página Artistas</title>
+
+    <!-- Hoja de estilos propia -->
+    <link rel="stylesheet" href="estilos.css">
+
+    <!-- Framework CSS ligero (Chota) para estilos rápidos -->
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+</head>
+
+<body style="color: black;">
+
+   <!-- Contenedor principal con secciones -->
+   <div id="contenedor">
+     <div class="elemento"> Sección 1</div>
+     <div class="elemento"> Sección 2</div>
+     <div class="elemento"> Sección 3</div>
+     <div class="elemento"> Sección 4</div>
+   </div> 
+
+   <!-- Encabezado con botones de interacción -->
+   <div id="encabezado">
+    <button id="btn">Mostrar libro</button>
+    <button id="btndos">Ver artista 1</button>
+    <button id="btntres">Ver artista Álvaro</button>
+   </div>
+
+   <!-- Contenedor donde se mostrará info de artistas -->
+   <div id="artista"></div>
+
+<script>
+
+  // Función: Obtener libros desde API
+  async function obtenerJSON(){
+
+    // Se hace petición a la API de OpenLibrary
+    const respuesta = await fetch('http://openlibrary.org/subjects/love.json?published_in=1500-1600');
+    const datos = await respuesta.json();
+
+    // Se crea un elemento <p> para mostrar el título
+    let d = document.createElement("p");
+    d.textContent = datos.works[0].title;
+
+    // Se agrega al contenedor principal
+    const contenedor = document.getElementById("contenedor");
+    contenedor.appendChild(d);
+
+    // Se obtiene el botón
+    let boton = document.getElementById("btn");
+
+    // Evento: cambia el contenido al hacer click
+    boton.addEventListener("click", function(){
+        d.textContent = datos.works[1].title;
+    });
+
+    console.log(datos); // Para inspección en consola
+  }
+
+
+  // Función: Obtener información de Coldplay
+  async function obtenerArtista1(){
+
+    // Petición a API de TheAudioDB
+    const respuesta = await fetch('https://www.theaudiodb.com/api/v1/json/123/search.php?s=coldplay');
+    const datos = await respuesta.json();
+
+    const contenedor = document.getElementById("artista");
+    const boton = document.getElementById("btndos");
+
+    // Evento del botón "Ver artista 1"
+    boton.addEventListener("click", function(){
+
+      contenedor.innerHTML = ""; // Limpia contenido previo
+
+      // Crear párrafo para biografía
+      const bio = document.createElement("p");
+      bio.textContent = datos.artists[0].strBiographyES;
+      contenedor.appendChild(bio);
+
+      // Crear imagen del artista
+      let img = document.createElement("img");
+      img.src = datos.artists[0].strArtistThumb;
+      img.width = 200;
+
+      contenedor.appendChild(img);
+    });
+  }
+
+
+  // Función: Obtener información de artista amigo
+  async function obtenerArtista2(){
+
+    const respuesta = await fetch('https://www.theaudiodb.com/api/v1/json/123/search.php?s=peso+pluma');
+    const datos = await respuesta.json();
+
+    const contenedor = document.getElementById("artista");
+    const boton = document.getElementById("btntres");
+
+    // Evento del botón "Ver artista Álvaro"
+    boton.addEventListener("click", function(){
+
+      contenedor.innerHTML = ""; // Limpia contenido previo
+
+      // Biografía
+      const bio = document.createElement("p");
+      bio.textContent = datos.artists[0].strBiography;
+      contenedor.appendChild(bio);
+
+      // Imagen
+      let img = document.createElement("img");
+      img.src = datos.artists[0].strArtistThumb;
+      img.width = 200;
+
+      contenedor.appendChild(img);
+    });
+  }
+
+
+  // Llamada a funciones
+  obtenerJSON();
+  obtenerArtista1();
+  obtenerArtista2();
+
+</script>
+
+</body>
+</html>

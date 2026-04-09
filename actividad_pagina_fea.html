@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tarea HTML CSS Página Fea</title>
+
+    <style>
+
+        /* ESTILO GENERAL DE LA PÁGINA */
+        body {
+            background-color: lime; /* color llamativo (intencionalmente feo) */
+            font-family: "Comic Sans MS", cursive; /* tipografía poco profesional */
+            margin: 0; /* elimina margen por defecto del navegador */
+        }
+
+        /* HEADER */
+        header {
+            background-color: black;
+            color: yellow;
+            padding: 15px; /* espacio interno */
+        }
+
+        /* NAVBAR */
+        nav {
+            background-color: purple;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin-right: 20px; /* separación entre links */
+            text-decoration: none; /* quitar subrayado */
+        }
+
+        /* ============================= */
+        /* CONTENEDOR PRINCIPAL */
+        /* ============================= */
+        .contenedor {
+            display: flex; /* activa flexbox (layout en fila) */
+            margin: 20px;
+        }
+
+        /* Columna izquierda (contenido principal) */
+        .izquierda {
+            width: 70%;
+            padding: 10px;
+        }
+
+        /* Columna derecha (sidebar) */
+        .derecha {
+            width: 30%;
+            padding: 10px;
+        }
+
+        /* ============================= */
+        /* TARJETAS DE CONTENIDO */
+        /* ============================= */
+        .card-fea {
+            background-color: pink;
+            border: 5px dotted red; /* estilo exagerado */
+            padding: 15px;
+            margin-bottom: 20px; /* separación entre tarjetas */
+        }
+
+        /* ============================= */
+        /* SIDEBAR */
+        /* ============================= */
+        .sidebar {
+            background-color: lightblue;
+            border: 3px solid black;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* ============================= */
+        /* CONTENEDOR DE IMÁGENES */
+        /* ============================= */
+        .screenshot {
+            border: 3px dashed black;
+            height: 200px;
+            display: flex; /* centra contenido */
+            align-items: center;
+            justify-content: center;
+            background-color: gray;
+            margin-top: 10px;
+
+            overflow: hidden; /* evita que la imagen se salga */
+        }
+
+        /* Imagen dentro del contenedor */
+        .screenshot img {
+            max-width: 100%;   /* no excede el ancho */
+            max-height: 100%;  /* no excede la altura */
+            object-fit: contain; /* mantiene proporción sin recortar */
+        }
+
+        /* ============================= */
+        /* FOOTER */
+        /* ============================= */
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <h1>TAREA HTML Y CSS</h1>
+</header>
+
+<!-- NAVBAR -->
+<nav>
+    <!-- Links solo visuales (no navegación real) -->
+    <a href="#">HTML</a>
+    <a href="#">CSS</a>
+    <a href="#">LAYOUT</a>
+</nav>
+
+<!-- CONTENEDOR PRINCIPAL -->
+<div class="contenedor">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div class="izquierda">
+
+        <!-- TARJETA: INTRO HTML -->
+        <div class="card-fea">
+            <h2>1. HTML - Introduction</h2>
+
+            <p><strong>What is HTML?</strong><br>
+            HTML is a language used to create web pages using tags.</p>
+
+            <p><strong>Head and Body</strong><br>
+            The head contains metadata and the body contains visible content.</p>
+        </div>
+
+        <!-- TARJETA: TAGS -->
+        <div class="card-fea">
+            <h2>Basic Tags</h2>
+
+            <!-- ejemplos de etiquetas semánticas -->
+            <p>section: groups content</p>
+            <p>article: independent content</p>
+            <p>aside: extra info</p>
+            <p>header: top</p>
+            <p>footer: bottom</p>
+
+            <!-- Lista desordenada -->
+            <h4>Unordered List</h4>
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+            </ul>
+
+            <!-- Lista ordenada -->
+            <h4>Ordered List</h4>
+            <ol>
+                <li>first</li>
+                <li>second</li>
+            </ol>
+
+            <!-- Tabla básica -->
+            <h4>Table</h4>
+            <table border="1">
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+                <tr>
+                    <td>Dario</td>
+                    <td>20</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- TARJETA: CSS -->
+        <div class="card-fea">
+            <h2>2. CSS - Introduction</h2>
+
+            <p>CSS is used to style web pages.</p>
+            <p>Purpose: colors, layout, design.</p>
+
+            <p>
+                Ways to apply CSS:
+                <br>1. Inline
+                <br>2. Internal
+                <br>3. External
+            </p>
+
+            <p>Selector selects elements and rule defines styles.</p>
+
+            <!-- Imagen de práctica -->
+            <h4>Flukeout</h4>
+            <div class="screenshot">
+                <img src="imagenes/css_juego1.png" alt="Captura juego CSS">
+            </div>
+        </div>
+
+        <!-- TARJETA: CSS BÁSICO -->
+        <div class="card-fea">
+            <h2>Basic CSS</h2>
+
+            <p>Tag selector: El selector de etiqueta selecciona elementos HTML directamente por su nombre de etiqueta, como p, h1, div o body</p>
+            <p>Class selector: El selector de clase permite aplicar estilos a múltiples elementos HTML que comparten el mismo atributo class</p>
+            <p>ID selector: #id</p>
+
+            <!-- Ejemplo de box model -->
+            <div style="border:5px solid black; padding:20px; margin:20px;">
+                Box model example
+            </div>
+
+            <p>Media queries are used for responsive design.</p>
+        </div>
+
+        <!-- TARJETA: LAYOUT -->
+        <div class="card-fea">
+            <h2>Layout CSS</h2>
+
+            <p>display: grid is for 2D layout</p>
+            <p>display: flex is for 1D layout</p>
+
+            <h4>Flexbox Froggy</h4>
+            <div class="screenshot">
+                <img src="imagenes/css_juego2_rana.png" alt="Captura flexbox">
+            </div>
+        </div>
+
+        <!-- TARJETA: RETO -->
+        <div class="card-fea">
+            <h2>HTML Challenge</h2>
+
+            <p>Apply a CSS framework to your WikiLeaks clone page.</p>
+
+            <div class="screenshot">
+                <img src="imagenes/captura3.png" alt="Captura proyecto">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="derecha">
+
+        <div class="sidebar">
+            <h3>HTML</h3>
+            <p>Language for web pages.</p>
+        </div>
+
+        <div class="sidebar">
+            <h3>CSS</h3>
+            <p>Styles the page.</p>
+        </div>
+
+        <div class="sidebar">
+            <h3>Layout</h3>
+            <p>Flexbox used.</p>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>Hecho por Dario</p>
+</footer>
+
+</body>
+</html>
