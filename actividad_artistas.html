@@ -27,6 +27,9 @@
     <button id="btntres">Ver artista Álvaro</button>
    </div>
 
+   <!-- Contenedor donde se mostrará info de libros -->
+   <div id="libros"></div>
+
    <!-- Contenedor donde se mostrará info de artistas -->
    <div id="artista"></div>
 
@@ -34,18 +37,19 @@
 
   // Función: Obtener libros desde API
   async function obtenerJSON(){
-
+    /*
     // Se hace petición a la API de OpenLibrary
-    const respuesta = await fetch('http://openlibrary.org/subjects/love.json?published_in=1500-1600');
+    const respuesta = await fetch('https://cors-anywhere.herokuapp.com/https://openlibrary.org/subjects/love.json?published_in=1500-1600');
     const datos = await respuesta.json();
 
     // Se crea un elemento <p> para mostrar el título
     let d = document.createElement("p");
     d.textContent = datos.works[0].title;
 
+    document.getElementById("contenedor").appendChild(d);
+
     // Se agrega al contenedor principal
     const contenedor = document.getElementById("contenedor");
-    contenedor.appendChild(d);
 
     // Se obtiene el botón
     let boton = document.getElementById("btn");
@@ -53,9 +57,24 @@
     // Evento: cambia el contenido al hacer click
     boton.addEventListener("click", function(){
         d.textContent = datos.works[1].title;
+        contenedor.appendChild(d);
     });
 
-    console.log(datos); // Para inspección en consola
+    console.log(datos.works[0].title); // Para inspección en consola */
+
+    const respuesta=await fetch('http://openlibrary.org/subjects/love.json?published_in=1500-1600'); 
+    const datos = await respuesta.json(); 
+    let d=document.createElement("p"); 
+    
+    d.textContent=datos.works[0].title; 
+    document.getElementById("contenedor").appendChild(d); 
+    let boton = document.getElementById("btn"); 
+    
+    boton.addEventListener("click", function(){ 
+      d.textContent = datos.works[1].title; 
+      contenedor.appendChild(p); }); 
+    
+    console.log(datos);
   }
 
 
