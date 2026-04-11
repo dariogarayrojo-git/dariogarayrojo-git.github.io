@@ -62,7 +62,7 @@
 
     console.log(datos.works[0].title); // Para inspección en consola */
 
-    const respuesta=await fetch('http://openlibrary.org/subjects/love.json?published_in=1500-1600'); 
+    const respuesta=await fetch('https://openlibrary.org/subjects/love.json?published_in=1500-1600'); 
     const datos = await respuesta.json(); 
     let d=document.createElement("p"); 
     
